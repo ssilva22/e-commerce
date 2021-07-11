@@ -15,6 +15,7 @@ import Home from './Home';
 import Payment from './Payment';
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Orders from "./Orders";
 
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
@@ -53,6 +54,13 @@ function App() {
     
     
     <Switch>
+
+    <Route path="/orders">
+      <Header/>
+      <Orders />
+    </Route>
+
+
     <Route path="/login">
       <Login />
     </Route>
