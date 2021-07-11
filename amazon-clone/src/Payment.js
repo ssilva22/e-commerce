@@ -31,7 +31,7 @@ function Payment() {
             const response = await axios({
                 method: 'post',
                 //Stripe expects the total amount in currencies subunits
-                url: `/payments/create?total=${getBasketTotal(basket)* 100}`
+                url: `/payments/create?total=${getBasketTotal(basket)*100}`
             });
             setClientSecret(response.data.clientSecret)
         }
@@ -51,7 +51,7 @@ function Payment() {
             //paymentIntent = payment confirmation
 
             db.collection('users')
-            .doc(user ?.id)
+            .doc(user?.id)
             .collection('orders')
             .doc(paymentIntent.uid)
             .set({
